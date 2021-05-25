@@ -1,25 +1,22 @@
 
-let customerFirstNames = customers.map((cus) => cus.name.first)
-let customerImages = customers.map((cus) => cus.picture.medium)
 
 
+const insertionPoint = document.querySelector('#output')
 
-function renderNames(arr) {
-    // scoutFirstNames.forEach()
-    arr.forEach(name => {
-        let h2 = document.createElement("h2")
-        h2.innerText = name;
-        document.getElementById("output").appendChild(h2)
-    });
+for (let x of customers) {
+    const customerCard = document.createElement('div')
+    customerCard.classList.add('customer-card')
+    insertionPoint.appendChild(customerCard)
+    // grabbing and rendering the image
+    const customerImg = document.createElement('img')
+    customerImg.src = x.picture.large
+    customerCard.appendChild(customerImg)
+    // grabbing and redndering the name
+    const customerName = document.createElement('h2')
+    customerName.innerText = x.name.first + ' ' + x.name.last
+    customerCard.appendChild(customerName)
+    //grabbing and rendering the email
+    const customerEmail = document.createElement('p')
+    customerEmail.innerText = x.email
+    customerCard.appendChild(customerEmail)
 }
-
-function renderImages(arr) {
-    arr.forEach(image => {
-        let pic = document.createElement("img")
-        pic.src = image
-        document.getElementById("output").appendChild(pic)
-    })
-}
-
-renderNames(customerFirstNames)
-renderImages(customerImages)
