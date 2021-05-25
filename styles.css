@@ -8,3 +8,7 @@ body {
     font-family: Helvetica, sans-serif;
     margin: 20px;
 }
+
+img {
+    width: 100px;
+}
