@@ -11,17 +11,17 @@ for (let x of customers) {
     const customerCard = document.createElement('div')
     customerCard.classList.add('customer-card')
     insertionPoint.appendChild(customerCard)
-    // grabbing and rendering the image
+    // customer picture
     const customerImg = document.createElement('img')
     customerImg.src = x.picture.large
     customerCard.appendChild(customerImg)
-    // grabbing and rendering the name
+    // first and last name
     const customerName = document.createElement('h2')
     const firstName = capitalize(x.name.first)
     const lastName = capitalize(x.name.last)
     customerName.innerText = firstName + ' ' + lastName
     customerCard.appendChild(customerName)
-    // grabbing and rendering the email
+    // email
     const customerEmail = document.createElement('p')
     customerEmail.innerText = x.email
     customerCard.appendChild(customerEmail)
@@ -38,4 +38,9 @@ for (let x of customers) {
     const date = moment(x.dob.date).format('LL')
     dateOfBirth.innerText = 'DOB: ' + date
     customerCard.appendChild(dateOfBirth)
+    // date registered
+    const dateRegistered = document.createElement('p')
+    const register = moment(x.registered.date).format('LL')
+    dateRegistered.innerText = 'Customer since: ' + register
+    customerCard.appendChild(dateRegistered)
 }
