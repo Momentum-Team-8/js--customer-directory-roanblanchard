@@ -21,7 +21,7 @@ for (let x of customers) {
     const lastName = capitalize(x.name.last)
     customerName.innerText = firstName + ' ' + lastName
     customerCard.appendChild(customerName)
-    //grabbing and rendering the email
+    // grabbing and rendering the email
     const customerEmail = document.createElement('p')
     customerEmail.innerText = x.email
     customerCard.appendChild(customerEmail)
@@ -33,4 +33,9 @@ for (let x of customers) {
     const state = nameToAbbr(x.location.state)
     customerAdress2.innerText = x.location.city + ' ' + state + ' ' + x.location.postcode
     customerCard.appendChild(customerAdress2)
+    // date of birth
+    const dateOfBirth = document.createElement('p')
+    const date = moment(x.dob.date).format('LL')
+    dateOfBirth.innerText = 'DOB: ' + date
+    customerCard.appendChild(dateOfBirth)
 }
