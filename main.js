@@ -31,7 +31,7 @@ for (let x of customers) {
     customerCard.appendChild(customerAdress1)
     const customerAdress2 = document.createElement('p')
     const state = nameToAbbr(x.location.state)
-    customerAdress2.innerText = x.location.city + ' ' + state + ' ' + x.location.postcode
+    customerAdress2.innerText = x.location.city + ', ' + state + ' ' + x.location.postcode
     customerCard.appendChild(customerAdress2)
     // date of birth
     const dateOfBirth = document.createElement('p')
