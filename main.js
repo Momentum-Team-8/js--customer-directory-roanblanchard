@@ -35,7 +35,7 @@ for (let x of customers) {
     customerCard.appendChild(customerAdress2)
     // date of birth
     const dateOfBirth = document.createElement('p')
-    const date = moment(x.dob.date).format('LL')
+    const date = moment(x.dob.date).format('ll')
     dateOfBirth.innerText = 'DOB: ' + date
     customerCard.appendChild(dateOfBirth)
     // date registered
