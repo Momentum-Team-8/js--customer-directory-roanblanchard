@@ -40,7 +40,7 @@ for (let x of customers) {
     customerCard.appendChild(dateOfBirth)
     // date registered
     const dateRegistered = document.createElement('p')
-    const register = moment(x.registered.date).format('LL')
+    const register = moment(x.registered.date).format('ll')
     dateRegistered.innerText = 'Customer since: ' + register
     customerCard.appendChild(dateRegistered)
 }
